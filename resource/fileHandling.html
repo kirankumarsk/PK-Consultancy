@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PK Consultancy</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="https://kit.fontawesome.com/7bd8c5c8a7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <nav>
+                <img src="../images/Untitled-1.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="../index1.html">Home</a></li>
+                    <li><a href="../index1.html">Services</a></li>
+                    <li><a href="../resource/DBMS Projects.html">DBMS Projects</a></li>
+                    <li><a href="">File Handling Projects</a></li>
+                    <li><a href="../resource/Electronics.html">Electronics Projects</a></li>
+                    <li><a href="../index1.html">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+                <img src="../images/7.jpg" class="dbms">
+            </nav>
+            
+        </div>
+    </div>
+<!--------------------About--------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-2">
+                        <h1 class="sub-title">File Handling Projects</h1>
+                        <p style="font-family: Times New Roman;font-size: 18px;" class="textip">A file structure is a combination of representations for data in files. It is also a collection of operations for accessing the data. It enables applications to read, write, and modify data. File structures may also help to find the data that matches certain criteria. An improvement in file structure has a great role in making applications hundreds of times faster.
+                            The main goal of developing file structures is to minimize the number of trips to the disk in order to get desired information. It ideally corresponds to getting what we need in one disk access or getting it with as little disk access as possible.
+                            <br><br>A good file structure should:
+<br><ul>
+                            <li>Fast access to a great capacity</li>
+                            <li>Reduce the number of disk accesses</li>
+                            <li>Manage growth by splitting these collections.</li></ul><br>
+                            It is relatively easy to develop file structure designs that meet these goals when the files never change. However, as files change, grow, or shrink, designing file structures that can have these qualities is more difficult.</p>
+                             <div class="tab-contents active-tab1" id="skills" >
+                                <ul>
+                                    <li><span>Library Management System</span><br>Library Management system is developed using C++ Programming Language and different variables, strings, and classes. To store the data it uses C++ OOPs and file handling concept. This project provides the best system for managing library records.</li>
+                                    <li><span>Album Management System</span><br>Album management system is specially designed for purpose of adding the music album records in a library. The system elaborates the basic concept for storing and generating the album’s detail. Here in this system, staff can sign up as a system admin. He/she can have full access to the system for maintaining records.</li>
+                                    <li><span>Employee Management System</span><br>Employee Management system using C++ program uses EmpID as a unique identifier (i.e. primary key) to recognize employee. So, we can’t add two employees having the same ID. After successful entry of records of some employees, we can search records on the basis of ID or department. We can search particular employees from ID choosing option #2 and if we want to see all employees working in a department, we have to choose another option (i.e. option#3 in the menu). We can list all employee records also using option #4 in the menu. Again, we can update and delete existing records. Thus, this project is useful to manage employee records in an organization.</li>
+                                </ul>
+                             </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--------contact------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title1">Contact Me</h1>
+                <p><i class="fas fa-regular fa-envelopes-bulk"></i> pkconsultancy2510@gmail.com</p>
+                <p><i class="fas fa-regular fa-phone"></i> +91 7483891775</p>
+                <img src="../images/IMG-20220721-WA0002.jpg" class="card">
+            </div>
+            <div class="contact-right">
+                <p class="query1"> &nbsp; Ask Question</p>
+                <form name="submit-to-google-sheet"> 
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="phone" name="Phone" placeholder="Your Phone Number" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" value="send" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Kiran Kumar S K <i class="fas fa-solid fa-face-smiling-hands"></i></p>
+    </div>
+</div>
+        <script>
+            var tablinks=document.getElementsByClassName("tab-links");
+            var tabcontents=document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link")
+                document.getElementById(tabname).classList.add("active-tab")
+            }
+        </script>
+        <script>
+            var sidemeu = document.getElementById("sidemenu");
+            function openmenu(){
+                sidemeu.style.right="0";
+            }
+            function closemenu(){
+                sidemeu.style.right="-200px";
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbydrgLxbGK1HLrcz1uynF5E-g63VyjpgGsB01fDIkZjMg-XFF68JvkVWQVgW6OgGMhH-w/exec'
+            const form = document.forms['submit-to-google-sheet']
+          const msg=document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML= "Messsage Sent Successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
+ <!---------------Submittion form-https://github.com/jamiewilson/form-to-google-sheets--------------------------->

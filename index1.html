@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PK Consultancy</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/7bd8c5c8a7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <nav>
+                <img src="images/Untitled-1.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#about">Services</a></li>
+                    <li><a href="resource/DBMS Projects.html">DBMS Projects</a></li>
+                    <li><a href="resource/fileHandling.html">File Handling Projects</a></li>
+                    <li><a href="resource/Electronics.html">Electronics Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>&ensp;Welcome to<span> PK Consultancy</span><br><p style="font-size: 32px;"> &emsp;
+                A Vibrant Solution for Several Projects</p><p style="font-size: 20px;"> &emsp;&emsp;&emsp;From Chikmagalur, Karnataka, India.</p></h1>
+            <img src="images/consulting-icon.jpg" width="85%" height="250mm" class="banner">
+            </div>
+        </div>
+    </div>
+<!--------------------About--------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/1338396.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">Services</h1>
+                        <p style="font-family: Times New Roman;font-size: 18px;">We do the project based on the many domains of computer science also its sub-branches 
+                        and on Electronics domains. We will also design and publish the websites from local server to live server based on the need of the customer we design the webpages and make into interactive sites. We will also make personal and professional portfolio's based on the need.
+                    </p>
+                             <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>DBMS Projects</span><br>For DataBase Manaagement system we use the Languages like HTML, PHP, CSS, Javascript, MySQL</li>
+                                    <li><span>File Handling Projects</span><br>File handling provides a mechanism to store the output of a program in a file and to perform various operations on it.</li>
+                                    <li><span>Electronics Projects</span><br>Designing of circuit using Arduino, Raspberry Pi and other boards includingthe programming of it.</li>
+                                </ul>
+                             </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-------------------services----------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Live Webpage Designing</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>&nbsp;<i class="fa-solid fa-database"></i>
+                <h2 style="font-family: Times New Roman;color:rgb(236, 236, 236);">Web Design</h2><br>
+                <p style="font-family: Times New Roman;font-size: 18px; color:rgb(236, 236, 236);"> The different areas of web design include web graphic design; user interface design (UI 
+                    design); authoring, including standardised code and proprietary software; user experience design 
+                    (UX design); and search engine optimization. The term "web design" 
+                    is normally used to describe the design process relating to the front-end (client side) design of a
+                    website including writing markup.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------contact------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title1">Contact Me</h1>
+                <p><i class="fas fa-regular fa-envelopes-bulk"></i> pkconsultancy2510@gmail.com</p>
+                <p><i class="fas fa-regular fa-phone"></i> +91 7483891775</p>
+                <img src="images/IMG-20220721-WA0002.jpg" class="card">
+            </div>
+            <div class="contact-right">
+                <p class="query1"> &nbsp; Ask Question</p>
+                <form name="submit-to-google-sheet"> 
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="phone" name="Phone" placeholder="Your Phone Number" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" value="send" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Kiran Kumar S K <i class="fas fa-solid fa-face-smiling-hands"></i></p>
+    </div>
+</div>
+        <script>
+            var tablinks=document.getElementsByClassName("tab-links");
+            var tabcontents=document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link")
+                document.getElementById(tabname).classList.add("active-tab")
+            }
+        </script>
+        <script>
+            var sidemeu = document.getElementById("sidemenu");
+            function openmenu(){
+                sidemeu.style.right="0";
+            }
+            function closemenu(){
+                sidemeu.style.right="-200px";
+            }
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbydrgLxbGK1HLrcz1uynF5E-g63VyjpgGsB01fDIkZjMg-XFF68JvkVWQVgW6OgGMhH-w/exec'
+            const form = document.forms['submit-to-google-sheet']
+          const msg=document.getElementById("msg")
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML= "Messsage Sent Successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>
+ <!---------------Submittion form-https://github.com/jamiewilson/form-to-google-sheets--------------------------->
